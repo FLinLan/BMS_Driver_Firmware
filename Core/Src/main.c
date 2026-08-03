@@ -18,7 +18,13 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-
+#include "L9963E_burst.h"
+#include "L9963E_drv.h"
+#include "L9963E_interface.h"
+#include "L9963E_registers.h"
+#include "L9963E_status.h"
+#include "L9963E.h"
+#include "stm32_if.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -84,7 +90,43 @@ static void MX_USART2_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+L9963E_StatusTypeDef SPI_Receive(uint8_t *data, uint8_t size, uint8_t timeout_ms) {
+    HAL_StatusTypeDef errorcode;
 
+    errorcode = HAL_SPI_Receive(&hspi1, data, size, timeout_ms);
+
+    switch (errorcode) {
+        case HAL_OK:
+            return L9963E_OK;
+        case HAL_TIMEOUT:
+            return L9963E_TIMEOUT;
+        default:
+            return L9963E_ERROR;
+    }
+}
+
+L9963E_StatusTypeDef SPI_Transmit(uint8_t *data, uint8_t size, uint8_t timeout_ms) {
+    HAL_StatusTypeDef errorcode;
+
+    errorcode = HAL_SPI_Transmit(&hspi1, data, size, timeout_ms);
+
+    switch (errorcode) {
+        case HAL_OK:
+            return L9963E_OK;
+        case HAL_TIMEOUT:
+            return L9963E_TIMEOUT;
+        default:
+            return L9963E_ERROR;
+    }
+}
+
+uint32_t GetTickMs(void) {
+    return HAL_GetTick();
+}
+
+void DelayMs(uint32_t delay) {
+    HAL_Delay(delay);
+}
 /* USER CODE END 0 */
 
 /**
