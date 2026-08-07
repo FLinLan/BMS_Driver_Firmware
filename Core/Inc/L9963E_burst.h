@@ -2,7 +2,7 @@
  * L9963E_burst.h
  *
  *  Created on: Aug 3, 2026
- *      Author: VivoBook
+ *      Author: Max Lan
  */
 
 #ifndef INC_L9963E_BURST_H_

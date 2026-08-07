@@ -59,18 +59,30 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define MCU_EXTI_Pin GPIO_PIN_1
-#define MCU_EXTI_GPIO_Port GPIOC
-#define MCU_DBG1_Pin GPIO_PIN_2
-#define MCU_DBG1_GPIO_Port GPIOC
-#define MCU_ERR_Pin GPIO_PIN_3
-#define MCU_ERR_GPIO_Port GPIOC
-#define MCU_DBG2_Pin GPIO_PIN_2
-#define MCU_DBG2_GPIO_Port GPIOF
 #define SPI1_CS_Pin GPIO_PIN_4
 #define SPI1_CS_GPIO_Port GPIOC
+#define MCU_ERR_Pin GPIO_PIN_14
+#define MCU_ERR_GPIO_Port GPIOB
+#define MCU_DBG2_Pin GPIO_PIN_8
+#define MCU_DBG2_GPIO_Port GPIOD
+#define MCU_DBG1_Pin GPIO_PIN_10
+#define MCU_DBG1_GPIO_Port GPIOD
+#define MCU_EXTI_Pin GPIO_PIN_12
+#define MCU_EXTI_GPIO_Port GPIOD
+#define FAULTL_L_Pin GPIO_PIN_1
+#define FAULTL_L_GPIO_Port GPIOG
+#define FAULTH_L_Pin GPIO_PIN_3
+#define FAULTH_L_GPIO_Port GPIOG
 #define SPI3_CS_Pin GPIO_PIN_5
 #define SPI3_CS_GPIO_Port GPIOG
+#define S_STB_Pin GPIO_PIN_8
+#define S_STB_GPIO_Port GPIOG
+#define SHDN_FAULT_Pin GPIO_PIN_9
+#define SHDN_FAULT_GPIO_Port GPIOG
+#define PWM2_Pin GPIO_PIN_6
+#define PWM2_GPIO_Port GPIOB
+#define PWM1_Pin GPIO_PIN_7
+#define PWM1_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
